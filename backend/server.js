@@ -1,7 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const connectDB = require('./config/db')
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const authRouter = require('./routes/authRoutes');
 
 
 dotenv.config()
@@ -16,7 +17,7 @@ app.use(express.json())
 connectDB()
 
 //Routers
-
+app.use("/api/auth", authRouter)
 
 app.get("/", (req, res)=>{
     res.send("Api is working")
