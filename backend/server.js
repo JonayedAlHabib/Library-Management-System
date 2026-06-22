@@ -3,6 +3,7 @@ const cors = require('cors')
 const connectDB = require('./config/db')
 const dotenv = require('dotenv');
 const authRouter = require('./routes/authRoutes');
+const studentRouter = require('./routes/studentRoutes')
 
 
 dotenv.config()
@@ -18,6 +19,7 @@ connectDB()
 
 //Routers
 app.use("/api/auth", authRouter)
+app.use("/api/students", studentRouter)
 
 app.get("/", (req, res)=>{
     res.send("Api is working")
