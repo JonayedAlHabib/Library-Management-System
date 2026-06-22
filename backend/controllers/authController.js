@@ -43,7 +43,7 @@ const registerUser = async (req, res) =>{
 
         const hashedPassword = await bcrypt.hash(password, 10)
         const otpExpiry = new Date(Date.now() + 5*60*1000)
-        const studentId = `ST-${uuidV4().slice(0,8)}`
+        const studentId = `ST-${v4().slice(0,8)}`
 
         const user = await User.create({
             name,
@@ -83,7 +83,7 @@ const verifyOtp = async (req, res) =>{
             })
         }
 
-        object.assign(user, {isVerified: true, otp: null, otpExpiry: null})
+        Object.assign(user, {isVerified: true, otp: null, otpExpiry: null})
         await user.save()
         res.status(200).json({
             message: "OTP verify successfully"
@@ -111,7 +111,7 @@ const completeProfile = async (req, res)=>{
             message: "User not verified"
         }) 
 
-        object.assign(user, {department, stream, semester, year, rollNo, isProfileComplete: true})
+        Object.assign(user, {department, stream, semester, year, rollNo, isProfileComplete: true})
         await user.save()
         res.status(200).json({
             message: "Profile completed successfully"
@@ -167,7 +167,7 @@ const loginUser = async (req, res)=>{
 
 const getProfile = async (req, res)=>{
     try {
-        const user = await User.findOne(req.user.id).select("-password")
+        const user = await User.findById(req.user.id).select("-password")
         if(!user) return res.status(404).json({
             message: "User not found"
         })
@@ -255,7 +255,7 @@ const registerAdmin = async (req, res)=>{
             })
         }
 
-        const hashedPassword = await bcrypt.hash(password)
+        const hashedPassword = await bcrypt.hash(password, 10)
         const user = await User.create({
             name,
             email: email.trim().toLowerCase(),
