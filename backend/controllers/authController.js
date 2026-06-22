@@ -278,3 +278,14 @@ const registerAdmin = async (req, res)=>{
         })
     }
 }
+
+module.exports = {
+    registerUser,
+    verifyOtp,
+    completeProfile,
+    loginUser,
+    getProfile,
+    updateProfile,
+    getUsers: getUser,
+    registerAdmin,
+}

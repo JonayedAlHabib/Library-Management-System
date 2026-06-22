@@ -41,3 +41,8 @@ const authorizedRoles = (...roles) =>{
         next()
     }
 }
+
+module.exports = {
+  authenticateToken: authenticationToken,
+  authorizeRoles: authorizedRoles,
+}
