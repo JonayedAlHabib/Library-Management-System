@@ -1,6 +1,6 @@
 const {createTransport} = require('nodemailer')
 
-const sendOtp = async (email, otp){
+const sendOtp = async (email, otp) =>{
     const transporter = createTransport({
         service: "gmail",
         auth: {
