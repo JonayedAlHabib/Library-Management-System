@@ -4,7 +4,7 @@ const connectDB = require('./config/db')
 const dotenv = require('dotenv');
 const authRouter = require('./routes/authRoutes');
 const studentRouter = require('./routes/studentRoutes')
-
+const bookRouter = require('./routes/bookRoutes')
 
 dotenv.config()
 
@@ -20,6 +20,8 @@ connectDB()
 //Routers
 app.use("/api/auth", authRouter)
 app.use("/api/students", studentRouter)
+app.use("/api/books",bookRouter)
+
 
 app.get("/", (req, res)=>{
     res.send("Api is working")
