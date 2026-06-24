@@ -163,8 +163,7 @@ const applyFine = async (req, res)=>{
 
         res.status(200).json({
             success: true,
-            message: "Manual fine applied successfully"
-            ,
+            message: "Manual fine applied successfully",
             issue
         })
     } catch (error) {
@@ -246,4 +245,15 @@ const updateFineSettings = async (req, res)=>{
             message: "Error updating fine settings", error: error.message
         })
     }
+}
+
+module.exports = {
+    issueManualBooks,
+    getIssues,
+    getStudentIssues,
+    returnBook,
+    applyFine,
+    clearFine,
+    getFineSettings,
+    updateFineSettings,
 }
