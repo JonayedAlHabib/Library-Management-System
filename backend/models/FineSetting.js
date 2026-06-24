@@ -13,4 +13,4 @@ const finesSettingSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model("FineSetting", fineSettingSchema)
+module.exports = mongoose.model("FineSetting", finesSettingSchema)
