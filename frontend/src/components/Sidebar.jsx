@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import {sidebarStyle as s} from '../assets/dummyStyles'
+import {sidebarStyles as s} from '../assets/dummyStyles'
 import { Bell, BookCopy, ChartNoAxesCombined, ChevronRight, Menu, ShieldCheck, UserRound, X } from 'lucide-react';
 
 const iconMap = {
@@ -37,7 +37,7 @@ function Sidebar({
             onClick={()=> setOpen(false)}
         />
 
-        <aside className={`${s.Sidebar} ${open ? s.SidebarOpen : s.SidebarClosed}`}
+        <aside className={`${s.sidebar} ${open ? s.sidebarOpen : s.sidebarClosed}`}
         >
             <div className={s.sidebarHeader}>
                 <div className="min-w-0 pr-3">
