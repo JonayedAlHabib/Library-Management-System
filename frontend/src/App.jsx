@@ -5,8 +5,11 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminBooks from './pages/admin/Books';
+import AdminFines from './pages/admin/Fines';
+import AdminUser from './pages/admin/User';
 import UserDashboard from './pages/user/Dashboard';
 import UserBooks from './pages/user/Books';
+import EditProfile from './pages/user/EditProfile';
 
 export default function App() {
   return (
@@ -18,10 +21,14 @@ export default function App() {
       {/* Admin */}
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="/admin/books" element={<AdminBooks />} />
+      <Route path="/admin/fines" element={<AdminFines />} />
+      <Route path="/admin/users" element={<AdminUser />} />
       
       {/* User */}
       <Route path="/user/dashboard" element={<UserDashboard />} />
       <Route path="/user/books" element={<UserBooks />} />
+      <Route path="/user/profile" element={<EditProfile />} />
+      <Route path="/user/edit-profile" element={<EditProfile />} />
     </Routes>
   );
 }
