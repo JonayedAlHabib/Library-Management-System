@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-library-paper: #f8f5f0;
+  --color-library-ink: #1a2521;
+  --color-library-panel: #2c423a;
+  --color-library-gold: #d4af37;
+  --color-library-gold-soft: #e8d8a3;
+  --color-library-success: #2e7d32;
+  --color-library-red-600: #dc2626;
+}
