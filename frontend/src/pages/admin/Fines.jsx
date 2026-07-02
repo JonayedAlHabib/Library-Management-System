@@ -13,7 +13,7 @@ const AdminFines = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f8f5f0]">
+        <div className="min-h-screen bg-library-paper">
             <Sidebar 
                 title="ShelfWise" 
                 subtitle="College admin controls" 

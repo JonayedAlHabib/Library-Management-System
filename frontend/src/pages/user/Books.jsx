@@ -13,7 +13,7 @@ const UserBooks = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f8f5f0]">
+        <div className="min-h-screen bg-library-paper">
             <Sidebar 
                 title="ShelfWise" 
                 subtitle="College library access" 
@@ -59,7 +59,7 @@ const UserBooks = () => {
                     </div>
 
                     {/* Empty State */}
-                    <div className="bg-[#f8f5f0] border border-dashed border-gray-300 rounded-3xl h-80 flex flex-col items-center justify-center text-center">
+                    <div className="bg-library-paper border border-dashed border-gray-300 rounded-3xl h-80 flex flex-col items-center justify-center text-center">
                         <BookCopy size={48} className="text-gray-300 mb-4" />
                         <p className="text-gray-500">No issued books matched your search.</p>
                     </div>

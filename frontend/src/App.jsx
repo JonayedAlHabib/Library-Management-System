@@ -5,11 +5,12 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminBooks from './pages/admin/Books';
+import AdminUsers from "./pages/admin/User";
 import AdminFines from './pages/admin/Fines';
-import AdminUser from './pages/admin/User';
 import UserDashboard from './pages/user/Dashboard';
 import UserBooks from './pages/user/Books';
-import EditProfile from './pages/user/EditProfile';
+import UserEditProfile from './pages/user/EditProfile';
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
   return (
@@ -17,18 +18,50 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      
-      {/* Admin */}
-      <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      <Route path="/admin/books" element={<AdminBooks />} />
-      <Route path="/admin/fines" element={<AdminFines />} />
-      <Route path="/admin/users" element={<AdminUser />} />
-      
-      {/* User */}
-      <Route path="/user/dashboard" element={<UserDashboard />} />
-      <Route path="/user/books" element={<UserBooks />} />
-      <Route path="/user/profile" element={<EditProfile />} />
-      <Route path="/user/edit-profile" element={<EditProfile />} />
+
+      {/* Protected Student Routes */}
+      <Route path="/user/dashboard" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <UserDashboard />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/user/books" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <UserBooks />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/user/profile" element={
+        <ProtectedRoute allowedRoles={['user']}>
+          <UserEditProfile />
+        </ProtectedRoute>
+      } />
+
+      {/* Protected Admin Routes */}
+      <Route path="/admin/dashboard" element={
+        <ProtectedRoute allowedRoles={['admin']}>
+          <AdminDashboard />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/admin/books" element={
+        <ProtectedRoute allowedRoles={['admin']}>
+          <AdminBooks />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/admin/users" element={
+        <ProtectedRoute allowedRoles={['admin']}>
+          <AdminUsers />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/admin/fines" element={
+        <ProtectedRoute allowedRoles={['admin']}>
+          <AdminFines />
+        </ProtectedRoute>
+      } />
     </Routes>
   );
 }

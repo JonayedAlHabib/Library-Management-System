@@ -18,7 +18,7 @@ const UserDashboard = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f8f5f0]">
+        <div className="min-h-screen bg-library-paper">
             <Sidebar
                 title="ShelfWise"
                 subtitle="College library access"
@@ -102,7 +102,7 @@ const UserDashboard = () => {
                         </div>
                         <button className="text-emerald-700 font-medium">View More →</button>
                     </div>
-                    <div className="bg-[#f8f5f0] border border-dashed border-gray-300 rounded-2xl h-40 flex items-center justify-center text-gray-400">
+                    <div className="bg-library-paper border border-dashed border-gray-300 rounded-2xl h-40 flex items-center justify-center text-gray-400">
                         No recent books found for this account.
                     </div>
                 </div>
